@@ -48,7 +48,7 @@ export default function Hero(){
           >
             <span className="bg-clip-text text-transparent"
                   style={{backgroundImage: 'linear-gradient(90deg, var(--accent), var(--primary))'}}>
-              Pełna kontrola nad inwestycją
+              Pełna kontrola nad inwestycją — v2
             </span>{" "}
             w standardzie enterprise
           </motion.h1>
@@ -60,33 +60,9 @@ export default function Hero(){
             className="mx-auto mt-5 max-w-3xl text-lg"
             style={{color:'var(--muted)'}}
           >
-            Kosztorysy, zakupy, magazyn, rozliczenia podwykonawców i analizy rentowności w czasie rzeczywistym – w jednym spójnym systemie.
+            (To widoczna zmiana sanity — jeśli to widzisz, masz najnowszy deploy.)
           </motion.p>
 
-          <motion.div
-            initial={{ scale: 0.98, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="mt-8 flex items-center justify-center gap-4"
-          >
-            <a href="#" className="btn-primary">Umów demo</a>
-            <a href="#" className="btn-ghost">Zobacz możliwości →</a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mx-auto mt-14 max-w-6xl rounded-3xl p-4 backdrop-blur-md"
-            style={{background:'color-mix(in oklab, white 80%, transparent)', border:'1px solid rgba(229,231,235,0.9)'}}
-          >
-            <div className="grid gap-6 md:grid-cols-3 text-left">
-              <Kpi label="Budżet projektu" value="2,48 mln zł" note="+4,2% vs plan" />
-              <Kpi label="Zużycie materiałów" value="74%" note="magazyn: 1 240 poz." />
-              <Kpi label="Rozliczenia podwykonawców" value="36 / 40" note="4 oczekuje akceptacji" />
-            </div>
-          </motion.div>
         </div>
       </Container>
     </section>

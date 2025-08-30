@@ -1,11 +1,19 @@
 import Hero from "../components/Hero";
-import Features from "../components/Features";
+import LogoCloud from "../components/LogoCloud";
+import Stats from "../components/Stats";
+import FeatureGrid from "../components/FeatureGrid";
+import FinalCTA from "../components/FinalCTA";
 
-export default function Home() {
+export default function Home(){
   return (
     <main>
+      {/* SANITY MARKER V2 */}
+      <div className="text-center text-xs text-blue-600">DEPLOY-MARKER: v2</div>
       <Hero />
-      <Features />
+      <LogoCloud />
+      <Stats />
+      <FeatureGrid />
+      <FinalCTA />
     </main>
   );
 }
