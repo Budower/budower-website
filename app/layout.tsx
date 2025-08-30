@@ -1,5 +1,7 @@
-import "./../styles/globals.css";
+import "../styles/globals.css";
 import type { Metadata } from "next";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Budower — Oprogramowanie dla wykonawców budowlanych",
@@ -10,17 +12,21 @@ export const metadata: Metadata = {
     url: "https://budower.com",
     siteName: "Budower",
     locale: "pl_PL",
-    type: "website",
+    type: "website"
   },
   icons: {
-    icon: "/favicon.ico",
-  },
+    icon: "/favicon.ico"
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pl">
-      <body>{children}</body>
+      <body className="antialiased">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
