@@ -2,13 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #F9FAFB;
-  --text: #0F172A;
+/* Light (default) */
+:root{
+  --bg:#F7F8FA;
+  --panel:#FFFFFF;
+  --ink:#0F172A;
+  --muted:#667085;
+  --primary:#2563EB;
+  --accent:#0EA5E9;
+  --ring:#D0D5DD;
+}
+
+/* Dark (auto via prefers-color-scheme) */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0B1020;
+    --panel:#0E142A;
+    --ink:#E6E9F2;
+    --muted:#8A93A6;
+    --primary:#3B82F6;
+    --accent:#22D3EE;
+    --ring:#1F2937;
+  }
 }
 
 html, body {
   height: 100%;
-  background: var(--bg);
-  color: var(--text);
+  background:
+    radial-gradient(900px 480px at 80% -10%, rgba(37,99,235,0.08), transparent 60%),
+    radial-gradient(900px 480px at -10% 20%, rgba(14,165,233,0.10), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+}
+
+@media (prefers-color-scheme: dark){
+  html, body {
+    background:
+      radial-gradient(1200px 700px at 80% -10%, rgba(37,99,235,0.30), transparent 60%),
+      radial-gradient(1200px 700px at -10% 20%, rgba(14,165,233,0.25), transparent 60%),
+      var(--bg);
+  }
+}
+
+@layer components{
+  .btn{ @apply inline-flex items-center justify-center rounded-2xl px-6 py-3 font-semibold transition; }
+  .btn-primary{ @apply btn text-white shadow-lg; background: var(--primary); }
+  .btn-ghost{ @apply btn; color: var(--ink); }
+  .card{ @apply rounded-2xl border shadow-[0_6px_24px_rgba(16,24,40,0.06)]; background: var(--panel); border-color: rgba(229,231,235,var(--tw-border-opacity,1)); }
+  .chip{ @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm; background: var(--panel); border: 1px solid rgba(229,231,235,0.9); color: var(--muted); }
+}
+
+/* Fine-tune borders in dark */
+@media (prefers-color-scheme: dark){
+  .card{ border-color: rgba(255,255,255,0.08); box-shadow: 0 10px 36px rgba(0,0,0,0.35); }
+  .chip{ border-color: rgba(255,255,255,0.12); }
 }
